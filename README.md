@@ -1,4 +1,6 @@
 # Nana K'ay Barbershop
+A responsive website for managing the services of Nana K'ay Barbershop
+
 Booking + Service Management for Nana K'ay Babershop
 
 ## Features
@@ -13,4 +15,5 @@ Booking + Service Management for Nana K'ay Babershop
 
 ## Contact 
 - Nana K'ay Barbershop 
-- 0543258881 / 0208391725
+- 0543258881 / 0208391725 / 0509928040
+
