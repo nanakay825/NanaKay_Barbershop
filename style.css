@@ -690,3 +690,61 @@
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
         }
+
+
+/* --- EYE-CATCHING ANIMATION FOR "THE GAME" --- */
+
+/* 1. Simple floating text animation (No extra shadows) */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* 2. The spinning scissors animation you liked */
+@keyframes spinScissors {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(-15deg); }
+    40% { transform: rotate(15deg); }
+    60% { transform: rotate(-10deg); }
+    80% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* 3. Apply the float to the title with the original colors */
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary);
+    
+    /* Original dark outline */
+    -webkit-text-stroke: 1.5px #1a1a1a;
+    text-stroke: 1.5px #1a1a1a;
+    
+    /* FIXED shadow - no glow, no color change */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+    
+    /* Floating animation */
+    animation: floatAnimation 3s ease-in-out infinite; 
+    
+    /* Keeps the stroke sharp while animating */
+    display: inline-block;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* 4. Apply the spin ONLY to the scissors emoji */
+.hero h2 .scissors {
+    display: inline-block;
+    animation: spinScissors 2.5s ease-in-out infinite;
+    /* Removes the dark stroke from the emoji so it stays clean */
+    -webkit-text-stroke: 0px transparent; 
+}
