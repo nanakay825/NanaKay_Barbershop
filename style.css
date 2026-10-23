@@ -748,3 +748,28 @@
     /* Removes the dark stroke from the emoji so it stays clean */
     -webkit-text-stroke: 0px transparent; 
 }
+
+
+/* --- PAGE TURN FLIP ANIMATION FOR GALLERY --- */
+
+.flip-container {
+    perspective: 1500px; /* Creates the 3D depth */
+}
+
+.flip-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    /* The page turning hinge starts on the left */
+    transform-origin: left center; 
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+/* This is the class JS adds to trigger the page turn */
+.flip-image.is-turning {
+    transform: rotateY(-100deg); /* Flips the page away to the left */
+    opacity: 0; /* Hides the back of the page */
+}

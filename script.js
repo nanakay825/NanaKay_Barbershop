@@ -69,3 +69,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// --- PAGE TURN GALLERY SLIDESHOW ---
+document.addEventListener("DOMContentLoaded", () => {
+    const flipContainers = document.querySelectorAll('.flip-container');
+
+    flipContainers.forEach(container => {
+        const imagesString = container.getAttribute('data-images');
+        if (!imagesString) return; 
+
+        const images = imagesString.split(',').map(img => img.trim());
+        let currentIndex = 0;
+        const imgElement = container.querySelector('.flip-image');
+
+        if (images.length > 1) {
+            setInterval(() => {
+                // 1. Turn the page (flip away to the left)
+                imgElement.classList.add('is-turning');
+
+                // 2. Wait for the page to "leave" (300ms = half of the 0.6s CSS transition)
+                setTimeout(() => {
+                    // Change the image while the page is technically invisible
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imgElement.src = images[currentIndex];
+                    
+                    // 3. Instantly snap the page to the right side so it can turn back in
+                    imgElement.style.transition = 'none'; 
+                    imgElement.style.transform = 'rotateY(100deg)';
+                    imgElement.style.opacity = '0';
+
+                    // 4. Turn the page back to facing forward
+                    setTimeout(() => {
+                        imgElement.style.transition = 'transform 0.6s ease-in-out, opacity 0.6s ease-in-out';
+                        imgElement.classList.remove('is-turning');
+                        imgElement.style.transform = 'rotateY(0deg)';
+                        imgElement.style.opacity = '1';
+                    }, 50); // Short pause to let the browser catch up
+                    
+                }, 300); 
+
+            }, 4000); // Changes every 4 seconds
+        }
+    });
+});
