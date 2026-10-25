@@ -774,3 +774,23 @@
     opacity: 0; /* Hides the back of the page */
 }
 
+
+
+/* Sservice Photo Styling */
+.service-img {
+    height: 200px;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    font-size: 4rem;
+}
+
+/*Service Photo Styling*/
+.service-photo {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center;
+}
