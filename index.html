@@ -63,7 +63,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Classic Haircut</h3>
-                        <div class="price">GHC 30</div>
+                        <div class="price">GHC 70</div>
                         <p>Traditional haircut using clippers and shears. Includes a hot towel treatment and finishing touches.</p>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Beard Trim & Shape</h3>
-                        <div class="price">GHC 20</div>
+                        <div class="price">GHC 50</div>
                         <p>Professional beard shaping, trimming, and conditioning for a perfectly groomed look.</p>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Royal Shave</h3>
-                        <div class="price">GHC 35</div>
+                        <div class="price">GHC 50</div>
                         <p>Traditional straight razor shave with hot towels, pre-shave oil, and post-shave balm.</p>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Haircut & Shave</h3>
-                        <div class="price">GHC 50</div>
+                        <div class="price">GHC 100</div>
                         <p>The complete gentleman's package. Haircut, beard trim, and royal shave experience.</p>
                     </div>
                 </div>
@@ -165,9 +165,16 @@
                     <div class="gallery-caption">Precision Haircut & Beard Combo</div>
                 </div>
 
-                <!-- Gallery Item 9 -->
-                <div class="gallery-item">
-                    <img src="images/photo_2026-02-03_23-20-34.jpg" alt="Dyed Hair" style="width:100%; height:100%; object-fit:cover; object-position: center 78%;">
+                <!-- Gallery Item 9 (Flipping Slideshow) -->
+                <style>
+                       /* This targets the image ONLY when the 2nd or 3rd photo loads */
+                       .flip-image[src*="photo_2026-01-27_23-19-57.jpg"],
+                       .flip-image[src*="photo_2026-10-23_12-11-58.jpg"] {
+                       object-position: center 30% !important; /* Pushes the 2nd and 3rd photos up */
+    }
+                </style>
+                <div class="gallery-item flip-container" data-images="images/photo_2026-02-03_23-20-34.jpg, images/photo_2026-01-27_23-19-57.jpg, images/photo_2026-10-23_12-11-58.jpg">
+                    <img src="images/photo_2026-02-03_23-20-34.jpg" class="flip-image" alt="Dyed Hair" style="width:100%; height:100%; object-fit:cover; object-position: center 78%;">
                     <div class="gallery-caption">Dyed Hair</div>
                 </div>
             </div>
