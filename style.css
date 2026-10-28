@@ -229,9 +229,9 @@
         .service-card:hover {
             transform: translateY(-10px);
         }
-
+        /* Service Photo Styling */
         .service-img {
-            height: 200px;
+            height: 350px;
             background-color: var(--primary);
             display: flex;
             align-items: center;
@@ -775,17 +775,6 @@
 }
 
 
-
-/* Sservice Photo Styling */
-.service-img {
-    height: 200px;
-    background-color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--secondary);
-    font-size: 4rem;
-}
 
 /*Service Photo Styling*/
 .service-photo {
