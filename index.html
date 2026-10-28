@@ -105,7 +105,7 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+      <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
             <div class="section-title">
@@ -113,76 +113,104 @@
                 <p style="text-align: center; max-width: 700px; margin: 0 auto 1rem;">See examples of our precision haircuts, beard trims, and styling work</p>
             </div>
             
-            <div class="gallery-grid">
-                <!-- Gallery Item 1 (Flipping Slideshow) -->
-                <div class="gallery-item flip-container" data-images="images/photo_5_2026-01-27_23-29-24.jpg, images/photo_2026-02-03_23-20-08.jpg, images/photo_9_2026-01-27_23-29-24.jpg">
-                   <img src="images/photo_5_2026-01-27_23-29-24.jpg" class="flip-image" alt="Classic Fade Haircut" style="width:100%; height:100%; object-fit:cover;">
-                    <div class="gallery-caption">Classic Fade Haircut</div>
-                </div>
+            <div class="marquee-grid">
                 
-                <!-- Gallery Item 2 -->
-                <div class="gallery-item">
-                    <img src="images/photo_2026-01-27_23-19-43.jpg" alt="Beard Shaping & Grooming" style="width:100%; height:100%; object-fit:cover; object-position:center 70%;">
-                    <div class="gallery-caption">Beard Shaping & Grooming</div>
-                </div>
-                
-                <!-- Gallery Item 3 (Flipping Slideshow) -->
-                <style>
-                    .flip-image[src*="photo_2026-10-25_01-10-34.jpg"] {
-                     object-position: center 20% !important; /* Fixes the 1st image */
-                    }
-                    .flip-image[src*="photo_2026-10-25_01-00-01.jpg"] {
-                     object-position: center 10% !important; /* Fixes the 2nd image */
-                    }
-                </style>
-
-                <div class="gallery-item flip-container" data-images="images/photo_2026-10-25_01-10-34.jpg, images/photo_2026-10-25_01-00-01.jpg">
-                    <img src="images/photo_2026-10-25_01-10-34.jpg" class="flip-image" alt="Traditional Straight Razor Shave" style="width:100%; height:100%; object-fit:cover; object-position:center 78%;">
-                    <div class="gallery-caption">Traditional Straight Razor Shave</div>
-                </div>
-                
-                <!-- Gallery Item 4 -->
-                <div class="gallery-item">
-                    <img src="images/photo_2026-02-03_22-36-37.jpg" alt="Blemish Fades" style="width:100%; height:100%; object-fit:cover; object-position: center 30%;">
-                    <div class="gallery-caption">Blemish Fades</div>
-                </div>
-                
-                <!-- Gallery Item 5 -->
-                <div class="gallery-item">
-                    <img src="images/photo_2026-02-03_22-00-53.jpg" alt="Line Up & Edge Work" style="width:100%; height:100%; object-fit:cover; object-position:center 35%;">
-                    <div class="gallery-caption">Line Up & Edge Work</div>
-                </div>
-                
-                <!-- Gallery Item 6 -->
-                <div class="gallery-item">
-                    <img src="images/photo_1_2026-01-27_23-29-24.jpg" alt="Complete Style Transformation" style="width:100%; height:100%; object-fit:cover; object-position:center 35%;">
-                    <div class="gallery-caption">Complete Style Transformation</div>
+                <!-- LEFT COLUMN (Moves Down) -->
+                <div class="marquee-column">
+                    <div class="marquee-track down">
+                        <!-- Group 1 -->
+                        <div class="marquee-item">
+                            <img src="images/photo_5_2026-01-27_23-29-24.jpg" alt="Classic Fade Haircut" style="object-position: center 20%;">
+                            <div class="gallery-caption">Classic Fade Haircut</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-02-03_22-36-37.jpg" alt="Blemish Fades" style="object-position: center 30%;">
+                            <div class="gallery-caption">Blemish Fades</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-01-27_23-20-33.jpg" alt="Modern Hair Designs" style="object-position: center 44%;">
+                            <div class="gallery-caption">Modern Hair Designs</div>
+                        </div>
+                        <!-- Group 2 (Duplicate for infinite scroll) -->
+                        <div class="marquee-item">
+                            <img src="images/photo_5_2026-01-27_23-29-24.jpg" alt="Classic Fade Haircut" style="object-position: center 20%;">
+                            <div class="gallery-caption">Classic Fade Haircut</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-02-03_22-36-37.jpg" alt="Blemish Fades" style="object-position: center 30%;">
+                            <div class="gallery-caption">Blemish Fades</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-01-27_23-20-33.jpg" alt="Modern Hair Designs" style="object-position: center 44%;">
+                            <div class="gallery-caption">Modern Hair Designs</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Gallery Item 7 -->
-                <div class="gallery-item">
-                    <img src="images/photo_2026-01-27_23-20-33.jpg" alt="Modern Hair Designs" style="width:100%; height:100%; object-fit:cover; object-position: center 44%;">
-                    <div class="gallery-caption">Modern Hair Designs</div>
+                <!-- MIDDLE COLUMN (Moves Up) -->
+                <div class="marquee-column">
+                    <div class="marquee-track up">
+                        <!-- Group 1 -->
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-01-27_23-19-43.jpg" alt="Beard Shaping" style="object-position: center 70%;">
+                            <div class="gallery-caption">Beard Shaping & Grooming</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-02-03_22-00-53.jpg" alt="Line Up & Edge Work" style="object-position: center 35%;">
+                            <div class="gallery-caption">Line Up & Edge Work</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-02-03_23-19-21.jpg" alt="Precision Haircut" style="object-position: center 25%;">
+                            <div class="gallery-caption">Precision Haircut & Beard Combo</div>
+                        </div>
+                        <!-- Group 2 (Duplicate for infinite scroll) -->
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-01-27_23-19-43.jpg" alt="Beard Shaping" style="object-position: center 70%;">
+                            <div class="gallery-caption">Beard Shaping & Grooming</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-02-03_22-00-53.jpg" alt="Line Up & Edge Work" style="object-position: center 35%;">
+                            <div class="gallery-caption">Line Up & Edge Work</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-02-03_23-19-21.jpg" alt="Precision Haircut" style="object-position: center 25%;">
+                            <div class="gallery-caption">Precision Haircut & Beard Combo</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Gallery Item 8 -->
-                <div class="gallery-item">
-                    <img src="images/photo_2026-02-03_23-19-21.jpg" alt="Precision Haircut & Beard Combo" style="width:100%; height:100%; object-fit:cover; object-position: center 25%;">
-                    <div class="gallery-caption">Precision Haircut & Beard Combo</div>
+                <!-- RIGHT COLUMN (Moves Down) -->
+                <div class="marquee-column">
+                    <div class="marquee-track down">
+                        <!-- Group 1 -->
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-10-25_01-10-34.jpg" alt="Straight Razor Shave" style="object-position: center 20%;">
+                            <div class="gallery-caption">Traditional Straight Razor Shave</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_1_2026-01-27_23-29-24.jpg" alt="Complete Style Transformation" style="object-position: center 35%;">
+                            <div class="gallery-caption">Complete Style Transformation</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-02-03_23-20-34.jpg" alt="Dyed Hair" style="object-position: center 30%;">
+                            <div class="gallery-caption">Dyed Hair</div>
+                        </div>
+                        <!-- Group 2 (Duplicate for infinite scroll) -->
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-10-25_01-10-34.jpg" alt="Straight Razor Shave" style="object-position: center 20%;">
+                            <div class="gallery-caption">Traditional Straight Razor Shave</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_1_2026-01-27_23-29-24.jpg" alt="Complete Style Transformation" style="object-position: center 35%;">
+                            <div class="gallery-caption">Complete Style Transformation</div>
+                        </div>
+                        <div class="marquee-item">
+                            <img src="images/photo_2026-02-03_23-20-34.jpg" alt="Dyed Hair" style="object-position: center 30%;">
+                            <div class="gallery-caption">Dyed Hair</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Gallery Item 9 (Flipping Slideshow) -->
-                <style>
-                       /* This targets the image ONLY when the 2nd or 3rd photo loads */
-                       .flip-image[src*="photo_2026-01-27_23-19-57.jpg"],
-                       .flip-image[src*="photo_2026-10-23_12-11-58.jpg"] {
-                       object-position: center 30% !important; /* Pushes the 2nd and 3rd photos up */
-    }
-                </style>
-                <div class="gallery-item flip-container" data-images="images/photo_2026-02-03_23-20-34.jpg, images/photo_2026-01-27_23-19-57.jpg, images/photo_2026-10-23_12-11-58.jpg">
-                    <img src="images/photo_2026-02-03_23-20-34.jpg" class="flip-image" alt="Dyed Hair" style="width:100%; height:100%; object-fit:cover; object-position: center 78%;">
-                    <div class="gallery-caption">Dyed Hair</div>
-                </div>
             </div>
         </div>
     </section>
@@ -484,6 +512,7 @@
                         <li><a href="#gallery" style="color: #aaa; text-decoration: none; display: block; margin-bottom: 10px;">Our Work</a></li>
                         <li><a href="#barbers" style="color: #aaa; text-decoration: none; display: block; margin-bottom: 10px;">Our Barbers</a></li>
                         <li><a href="#booking" style="color: #aaa; text-decoration: none; display: block; margin-bottom: 10px;">Book Now</a></li>
+                        <li><a href="#products" style="color: #aaa; text-decoration: none; display: block; margin-bottom: 10px;">Products</a></li>
                     </ul>
                 </div>
                 
