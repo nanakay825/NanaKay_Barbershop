@@ -17,6 +17,7 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
+// Booking Form Submission
 const bookingForm = document.getElementById('bookingForm');
 bookingForm.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -36,7 +37,7 @@ bookingForm.addEventListener('submit', async (e) => {
     });
     const result = await response.json();
     if (result.success) {
-      alert('Thank you! Your appointment has been booked. We will contact you shortly.');
+      alert('Thank you! Your appointment has been booked. We hope to welcome you soon!');
       bookingForm.reset();
     } else {
       alert('Failed to send. Please WhatsApp us.');
