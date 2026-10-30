@@ -17,55 +17,46 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-// Booking Form Submission
+// Booking Form Submission - FIXED TO SEND EMAIL
 const bookingForm = document.getElementById('bookingForm');
 
-bookingForm.addEventListener('submit', (e) => {
+bookingForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // Get form values
+    const submitBtn = bookingForm.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Get values for the nice message
     const name = document.getElementById('name').value;
     const service = document.getElementById('service').value;
     const barber = document.getElementById('barber').value;
     const date = document.getElementById('date').value;
     const time = document.getElementById('time').value;
-    
-    // Format date for display
     const formattedDate = new Date(date).toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
     });
-    
-    // Show confirmation message
-    alert(`Thank you, ${name}! Your appointment for ${service} with ${barber} on ${formattedDate} at ${time} has been booked. We'll contact you shortly to confirm.`);
-    
-    // Reset form
-    bookingForm.reset();
-    
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
 
-// Set minimum date for booking to today
-const today = new Date().toISOString().split('T')[0];
-document.getElementById('date').min = today;
+    try {
+        const formData = new FormData(bookingForm);
+        const response = await fetch(bookingForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        });
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if(targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if(targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
+        if (response.ok) {
+            alert(`Thank you, ${name}! Your appointment for ${service} with ${barber} on ${formattedDate} at ${time} has been booked. We'll contact you shortly to confirm.`);
+            bookingForm.reset();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            alert('Oops! Something went wrong. Please call us or try WhatsApp.');
         }
-    });
+    } catch (error) {
+        alert('Network error. Please check your internet and try again.');
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
 });
