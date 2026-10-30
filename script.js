@@ -17,7 +17,7 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-// Booking Form Submission - FIXED TO SEND EMAIL
+// Booking Form Submission - For receiving emails
 const bookingForm = document.getElementById('bookingForm');
 
 bookingForm.addEventListener('submit', async (e) => {
@@ -28,7 +28,6 @@ bookingForm.addEventListener('submit', async (e) => {
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
 
-    // Get values for the nice message
     const name = document.getElementById('name').value;
     const service = document.getElementById('service').value;
     const barber = document.getElementById('barber').value;
@@ -42,8 +41,7 @@ bookingForm.addEventListener('submit', async (e) => {
         const formData = new FormData(bookingForm);
         const response = await fetch(bookingForm.action, {
             method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
+            body: formData
         });
 
         if (response.ok) {
@@ -51,10 +49,11 @@ bookingForm.addEventListener('submit', async (e) => {
             bookingForm.reset();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            alert('Oops! Something went wrong. Please call us or try WhatsApp.');
+            alert('Oops! Something went wrong. Please try WhatsApp.');
         }
     } catch (error) {
         alert('Network error. Please check your internet and try again.');
+        console.log(error);
     } finally {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
